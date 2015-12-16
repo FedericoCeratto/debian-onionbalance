@@ -1,0 +1,3 @@
+version=3
+opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/onionbalance-$1\.tar\.gz/ \
+  https://github.com/DonnchaC/onionbalance/releases .*/v?(\d\S*)\.tar\.gz

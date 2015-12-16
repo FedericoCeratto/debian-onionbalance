@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=onionbalance
+
+# Copy unit tests, exclude functional tests which need a running Tor
+export PYBUILD_BEFORE_TEST=cp -r {dir}/test {build_dir}
+export PYBUILD_AFTER_TEST=rm -rf {build_dir}/test
+export PYBUILD_TEST_ARGS=--ignore=test/functional
+
+%:
+		dh "$@" --with python3,sphinxdoc --buildsystem=pybuild
+
+override_dh_auto_build:
+		dh_auto_build
+		sphinx-build -N -bhtml docs/ docs/_build/html
+		sphinx-build -N -bman docs/ docs/_build/man
+
+override_dh_clean:
+		dh_clean
+		rm -rf docs/_build/
