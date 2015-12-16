@@ -1,4 +1,4 @@
-Document: onionbalance-doc
+Document: onionbalance
 Title: OnionBalance Documentation
 Author: Donncha O'Cearbhaill
 Abstract: Tor hidden service load balancer
@@ -8,5 +8,5 @@ Abstract: Tor hidden service load balancer
 Section: net
 
 Format: HTML
-Index: /usr/share/doc/onionbalance-doc/html/index.html
-Files: /usr/share/doc/onionbalance-doc/html/*
+Index: /usr/share/doc/onionbalance/html/index.html
+Files: /usr/share/doc/onionbalance/html/*

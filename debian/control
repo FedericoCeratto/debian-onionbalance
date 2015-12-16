@@ -27,21 +27,7 @@ Depends: ${misc:Depends},
          ${python3:Depends},
          python3-stem (>= 1.4.1b),
 Recommends: tor (>= 0.2.7.1),
-Suggests: onionbalance-doc,
 Description: Tor hidden service load balancer
  The onionbalance tool provides load-balancing and redundancy for Tor
  hidden services by distributing user requests to multiple backend
  Tor instances.
-
-Package: onionbalance-doc
-Section: doc
-Architecture: all
-Depends: ${misc:Depends},
-         ${sphinxdoc:Depends},
-Recommends: onionbalance,
-Description: Tor hidden service load balancer - Documentation
- The onionbalance tool provides load-balancing and redundancy for Tor
- hidden services by distributing user requests to multiple backend
- Tor instances.
- .
- This package provides the documentation for OnionBalance.
