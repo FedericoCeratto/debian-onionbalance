@@ -131,8 +131,7 @@ html_theme_options = {
     "description": "Load balancing and redundancy for Tor hidden services.",
     'github_user': 'DonnchaC',
     'github_repo': 'onionbalance',
-    'github_button': False,
-    'travis_button': False,
+    'travis_button': True,
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
