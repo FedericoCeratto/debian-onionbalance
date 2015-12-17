@@ -1,0 +1,41 @@
+# OnionBalance systemd target
+
+[Unit]
+Description=OnionBalance service
+Documentation=man:onionbalance
+Documentation=https://github.com/DonnchaC/onionbalance
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+PIDFile=/run/onionbalance.pid
+ExecStart=/usr/sbin/onionbalance
+ExecReload=/usr/sbin/onionbalance reload
+ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/onionbalance.pid
+TimeoutStopSec=5
+KillMode=mixed
+
+EnvironmentFile=-/etc/default/%p
+User=onionbalance
+PermissionsStartOnly=true
+Restart=on-abnormal
+RestartSec=2s
+LimitNOFILE=65536
+
+# Hardening
+# AppArmorProfile=system_onionbalance
+# CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_CHOWN CAP_FOWNER
+NoNewPrivileges=yes
+PrivateDevices=yes
+PrivateTmp=yes
+ProtectHome=yes
+ProtectSystem=full
+ReadOnlyDirectories=/
+ReadWriteDirectories=-/proc
+# ReadWriteDirectories=-/var/lib/onionbalance
+ReadWriteDirectories=-/var/log/onionbalance
+ReadWriteDirectories=-/var/run
+
+[Install]
+WantedBy=multi-user.target
