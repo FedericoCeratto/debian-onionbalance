@@ -1,8 +1,12 @@
 #!/bin/sh -e
 
-# Remove logs on purge
+# Remove logs and user account on purge
+
 if [ "$1" = "purge" ]; then
     rm -rf /var/log/onionbalance/
+    if getent passwd onionbalance >/dev/null; then
+        adduser --quiet --system --group --no-create-home --home /nonexistent onionbalance
+    fi
 fi
 
 #DEBHELPER#
