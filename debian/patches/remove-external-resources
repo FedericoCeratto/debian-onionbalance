@@ -1,0 +1,20 @@
+Description: Remove requests to external services in the documentation
+ The Sphinx generated documentation loads external resources to display
+ the Travis-CI build status and a link to the Github repo. This has
+ privacy implications for the end user.
+Author: Donncha O'Cearbhaill <donncha@donncha.is>
+Bug: https://github.com/DonnchaC/onionbalance/issues/22
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- onionbalance-0.1.3.orig/docs/conf.py
++++ onionbalance-0.1.3/docs/conf.py
+@@ -131,7 +131,8 @@ html_theme_options = {
+     "description": "Load balancing and redundancy for Tor hidden services.",
+     'github_user': 'DonnchaC',
+     'github_repo': 'onionbalance',
+-    'travis_button': True,
++    'github_button': False,
++    'travis_button': False,
+ }
+
+ # Add any paths that contain custom themes here, relative to this directory.
