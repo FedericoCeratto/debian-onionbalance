@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+# Remove logs on purge
+if [ "$1" = "purge" ]; then
+    rm -rf /var/log/onionbalance/
+fi
+
+#DEBHELPER#
+
+exit 0
