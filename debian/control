@@ -1,6 +1,6 @@
 Source: onionbalance
 Maintainer: Debian Privacy Tools Maintainers <pkg-privacy-maintainers@lists.alioth.debian.org>
-Uploaders: Donncha O'Cearbhaill <donncha@donncha.is>
+Uploaders: Federico Ceratto <federico@debian.org>
 Section: net
 Priority: optional
 Build-Depends: debhelper (>= 9),
