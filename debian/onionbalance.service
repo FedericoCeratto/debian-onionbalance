@@ -1,10 +1,10 @@
 # OnionBalance systemd target
 
 [Unit]
-Description=OnionBalance service
+Description=OnionBalance - Tor Onion Service load balancer
 Documentation=man:onionbalance
 Documentation=https://github.com/DonnchaC/onionbalance
-After=network.target
+After=network.target, tor
 Wants=network-online.target
 
 [Service]
