@@ -3,7 +3,7 @@ Maintainer: Debian Privacy Tools Maintainers <pkg-privacy-maintainers@lists.alio
 Uploaders: Federico Ceratto <federico@debian.org>
 Section: net
 Priority: optional
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 9), dh-systemd
 Build-Depends-Indep:
  python-tox,
  python3-all,
