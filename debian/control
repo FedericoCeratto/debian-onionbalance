@@ -24,9 +24,11 @@ Vcs-Browser: https://anonscm.debian.org/cgit/pkg-privacy/packages/onionbalance.g
 
 Package: onionbalance
 Architecture: all
-Depends: ${misc:Depends},
-         ${python3:Depends},
-         python3-stem (>= 1.4.1b)
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ adduser,
+ python3-stem (>= 1.4.1b)
 Recommends: tor (>= 0.2.7.1)
 Description: Tor hidden service load balancer
  The onionbalance tool provides load-balancing and redundancy for Tor
