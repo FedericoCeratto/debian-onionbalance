@@ -7,6 +7,7 @@ set -e
 if [ "$1" = "purge" ]; then
     rm -rf /var/log/onionbalance/
     if getent passwd onionbalance >/dev/null; then
+        deluser onionbalance debian-tor
         deluser onionbalance
     fi
 fi
