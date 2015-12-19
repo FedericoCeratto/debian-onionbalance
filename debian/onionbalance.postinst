@@ -8,6 +8,10 @@ if [ "$1" = "configure" ]; then
     fi
 fi
 
+chown onionbalance:adm /var/log/onionbalance
+# rwxr-s---
+chmod 02750 /var/log/onionbalance
+
 #DEBHELPER#
 
 exit 0
