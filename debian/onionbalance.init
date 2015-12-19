@@ -37,6 +37,7 @@ PIDFILE=/var/run/onionbalance/onionbalance.pid
 DEFAULTSFILE=/etc/default/$NAME
 CONF_FNAME="/etc/onionbalance/config.yaml"
 DEFAULT_ARGS="-c $CONF_FNAME"
+export ONIONBALANCE_LOG_LOCATION=/var/log/onionbalance
 
 case "$1" in
   start)

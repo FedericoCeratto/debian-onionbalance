@@ -10,8 +10,9 @@ Wants=network-online.target
 ConditionPathExists=/etc/onionbalance/config.yaml
 
 [Service]
-Type=forking
+Type=simple
 PIDFile=/run/onionbalance.pid
+Environment="ONIONBALANCE_LOG_LOCATION=/var/log/onionbalance/log"
 ExecStart=/usr/sbin/onionbalance -c /etc/onionbalance/config.yaml
 ExecReload=/usr/sbin/onionbalance reload
 ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/onionbalance.pid
