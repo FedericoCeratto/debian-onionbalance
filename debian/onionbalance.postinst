@@ -5,6 +5,7 @@ set -e
 if [ "$1" = "configure" ]; then
     if ! getent passwd onionbalance >/dev/null; then
         adduser --quiet --system --group --no-create-home --home /nonexistent onionbalance
+        adduser onionbalance debian-tor
     fi
 fi
 
