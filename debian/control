@@ -28,8 +28,8 @@ Depends:
  ${misc:Depends},
  ${python3:Depends},
  adduser,
- python3-stem (>= 1.4.1b)
-Recommends: tor (>= 0.2.7.1)
+ python3-stem (>= 1.4.1b),
+ tor (>= 0.2.7.1)
 Description: Tor hidden service load balancer
  The onionbalance tool provides load-balancing and redundancy for Tor
  hidden services by distributing user requests to multiple backend
